@@ -15,4 +15,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 # Instancia de OAuth2PasswordBearer
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-app = FastAPI()
+app = FastAPI(
+    title = "PactGeo API con FastAPI",
+    description = "API para el proyecto PactGeo",
+    version = "0.0.1"
+)

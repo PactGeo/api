@@ -2,8 +2,11 @@ from typing import Optional
 from pydantic import BaseModel
 
 class DebateBase(BaseModel):
-    title: str
+    title: str = None
     description: Optional[str] = None
+    is_active: Optional[bool] = True
+    community: Optional[str] = None
+    owner_id: int
 
 class DebateCreate(DebateBase):
     pass

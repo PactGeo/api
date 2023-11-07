@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 
-from app import dependencies  # Importa las dependencias necesarias, como get_current_user
 from app.schemas import UserCreate, User, UserUpdate  # Importa los esquemas de usuario
 from app.crud import get_users, create_user, update_user, delete_user  # Importa las funciones CRUD
 

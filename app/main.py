@@ -3,6 +3,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
+from app.routers import communities, debates, users
 
 # Configuración para el algoritmo de hashing de contraseñas
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -20,3 +21,7 @@ app = FastAPI(
     description = "API para el proyecto PactGeo",
     version = "0.0.1"
 )
+
+app.include_router(communities.router)
+app.include_router(debates.router)
+app.include_router(users.router)

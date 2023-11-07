@@ -1,5 +1,7 @@
 from typing import List, Optional
 from pydantic import BaseModel, HttpUrl
+from .user import UserInDBBase, User
+from .debate import Debate
 
 class CommunityBase(BaseModel):
     name: str

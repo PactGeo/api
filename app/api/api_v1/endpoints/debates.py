@@ -6,11 +6,11 @@ from app.api import deps
 
 router = APIRouter()
 
-@router.post("/debates/", response_model=schemas.Debate)
+@router.post("/", response_model=schemas.Debate)
 def create_debate(debate: schemas.DebateCreate, db: Session = Depends(deps.get_db)):
     return crud.create_debate(db=db, debate=debate)
 
-@router.get("/debates/{debate_id}", response_model=schemas.Debate)
+@router.get("/{debate_id}", response_model=schemas.Debate)
 def read_debate(debate_id: int, db: Session = Depends(deps.get_db)):
     db_debate = crud.get_debate(db, debate_id=debate_id)
     if db_debate is None:
